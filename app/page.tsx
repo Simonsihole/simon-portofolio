@@ -23,7 +23,7 @@ export default function Portfolio() {
       image: "/bitcoin-predictor.png?height=300&width=500",
       tech: ["Python", "FastAPI", "LSTM", "Next.js", "Pandas", "Matplotlib"],
       github: "https://github.com/Simonsihole/btc_predictor",
-      live: "https://simon-portofolio-gvlo.vercel.app/",
+      live: "https://simon-lstmbtc.vercel.app/",
     },
     {
       title: "Customer Segmentation Analysis",
