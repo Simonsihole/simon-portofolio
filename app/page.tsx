@@ -17,13 +17,13 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "Sales Performance Dashboard",
+      title: "Bitcoin_Predictor",
       description:
-        "An interactive dashboard analyzing sales data with key performance indicators, trend analysis, and predictive insights using Python and Tableau.",
-      image: "/placeholder.svg?height=300&width=500",
-      tech: ["Python", "Tableau", "SQL", "Pandas"],
-      github: "#",
-      live: "#",
+        "A full-stack application that forecasts future Bitcoin prices using an LSTM neural network. The backend is built with FastAPI and Python for model inference, while the frontend uses Next.js to visualize historical trends and predicted values interactively.",
+      image: "/bitcoin-predictor.png?height=300&width=500",
+      tech: ["Python", "FastAPI", "LSTM", "Next.js", "Pandas", "Matplotlib"],
+      github: "https://github.com/Simonsihole/btc_predictor",
+      live: "https://simon-portofolio-gvlo.vercel.app/",
     },
     {
       title: "Customer Segmentation Analysis",
@@ -282,6 +282,7 @@ export default function Portfolio() {
                     ))}
                   </div>
                   <div className="flex gap-4">
+                  <Link href={project.github} target="_blank" rel="noopener noreferrer">
                     <Button
                       size="sm"
                       className="backdrop-blur-md bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-300"
@@ -289,6 +290,9 @@ export default function Portfolio() {
                       <Github className="mr-2 h-4 w-4" />
                       Code
                     </Button>
+                  </Link>
+
+                  <Link href={project.live} target="_blank" rel="noopener noreferrer">
                     <Button
                       size="sm"
                       className="backdrop-blur-md bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-300"
@@ -296,7 +300,8 @@ export default function Portfolio() {
                       <ExternalLink className="mr-2 h-4 w-4" />
                       Live Demo
                     </Button>
-                  </div>
+                  </Link>
+                </div>
                 </CardContent>
               </Card>
             ))}
