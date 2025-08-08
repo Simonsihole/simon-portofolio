@@ -40,7 +40,7 @@ const projects = [
     title: "Data Visualization and Market Basket Analysis on Shopee Sales Data",
     description:
       "Performed Market Basket Analysis (MBA) to identify item associations in customer transactions for 'Png.by_nya' Shopee Online Shop, focusing on K-pop fan kits and polaroids. Derived insights on frequently purchased item combinations to support marketing and cross-selling strategies.",
-    image: "/pt_gits.png",
+    image: "/Pt_gits.png",
     tech: ["Python", "Scikit-learn", "Matplotlib", "Jupyter"],
     github: "#",
     live: "#",
