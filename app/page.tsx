@@ -79,12 +79,12 @@ return (
       className="fixed top-0 w-full z-50 bg-gray-950/95 backdrop-blur-md border-b border-blue-900/50 shadow-lg"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex flex-col md:flex-row md:justify-between items-center py-4">
           <motion.div
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Link href="/" className="flex items-center space-x-2 group">
+            <Link href="/" className="flex items-center space-x-2 group mb-4 md:mb-0">
               <Image
                 src="/simonlogo.png"
                 alt="Portfolio Logo"
@@ -94,7 +94,7 @@ return (
               />
             </Link>
           </motion.div>
-          <div className="hidden md:flex space-x-8">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 md:space-x-8 md:flex-nowrap">
             {[
               { href: "/#projects", label: "Projects", onClick: (e: any) => { e.preventDefault(); scrollToSection('projects'); } },
               { href: "/experience", label: "Experience" },
