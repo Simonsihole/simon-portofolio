@@ -4,9 +4,14 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'SimonPorto',
-  description: 'Created with v0',
+  title: 'simonsihole',
+  description: 'Created by Simon',
   generator: 'v0.dev',
+  icons: {
+    icon: '/simonlogo.png',
+    shortcut: '/simonlogo.png',
+    apple: '/simonlogo.png',
+  },
 }
 
 export default function RootLayout({
@@ -17,6 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/simonlogo.png" />
+        <link rel="shortcut icon" href="/simonlogo.png" />
+        <link rel="apple-touch-icon" href="/simonlogo.png" />
         <style>{`
 html {
   font-family: ${GeistSans.style.fontFamily};
