@@ -164,21 +164,21 @@ return (
         </motion.p>
 
         <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: nameTypingComplete ? 1 : 0, y: nameTypingComplete ? 0 : 20 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-lg md:text-xl text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed"
-        >
-          I'm Simon Bungaran Sihole a passionate Data Enthusiast who loves transforming data into actionable insights, applying analytical skills and modern technologies to solve complex problems.
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: nameTypingComplete ? 1 : 0, y: nameTypingComplete ? 0 : 20 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="text-lg md:text-xl text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed"
+      >
+        I'm Simon Bungaran Sihole, a passionate Data Enthusiast dedicated to turning raw information into clear, actionable insights. I combine analytical thinking with modern technology to solve challenges and uncover opportunities.
         </motion.p>
 
         <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: nameTypingComplete ? 1 : 0, y: nameTypingComplete ? 0 : 20 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed"
-        >
-          I'm passionate about blending creativity, strategy, and curiosity in everything I do. Music, especially guitar fingerstyle, lets me express emotions through melody and rhythm, while gaming sharpens my strategic thinking and problem-solving skills. I'm deeply interested in predictive programming, where data and algorithms work together to anticipate outcomes, and I keep my mind and body sharp through an active love for sports.
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: nameTypingComplete ? 1 : 0, y: nameTypingComplete ? 0 : 20 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed"
+      >
+        My work blends creativity, strategy, and curiosity. Music especially guitar fingerstyle lets me convey emotion through melody, while gaming sharpens my strategic thinking. I'm drawn to predictive programming, where data and algorithms anticipate outcomes, and I keep my mind and body active through a love of sports. In every pursuit, I aim to connect patterns, solve problems, and create meaningful impact.
         </motion.p>
 
         <motion.div 
