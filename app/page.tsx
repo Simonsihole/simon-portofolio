@@ -178,7 +178,7 @@ return (
         transition={{ duration: 0.8, delay: 0.4 }}
         className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed"
       >
-        My work blends creativity, strategy, and curiosity. Music especially guitar fingerstyle lets me convey emotion through melody, while gaming sharpens my strategic thinking. I'm drawn to predictive programming, where data and algorithms anticipate outcomes, and I keep my mind and body active through a love of sports. In every pursuit, I aim to connect patterns, solve problems, and create meaningful impact.
+        My work blends creativity, strategy, and curiosity, i love playing guitar and reading books, in adition to that i also love sports to enhance my physical health.
         </motion.p>
 
         <motion.div 
