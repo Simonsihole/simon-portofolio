@@ -54,6 +54,15 @@ const projects = [
     github: "#",
     live: "#",
   },
+  {
+    title: "Deepseek R1 Riddle Master",
+    description:
+      "A small project using lightweight Ai integrated with react native, the Ai used is deepseek R1 the most lightweight Ai model in the market, to give a random riddle based on the user theme selection, for now on it still run locally on my devices",
+    image: "/riddle.png",
+    tech: ["AI", "React.Js", "Text Processing", "Deepseek R1"],
+    github: "#",
+    live: "#",
+  },
 ]
 
 const skills = [

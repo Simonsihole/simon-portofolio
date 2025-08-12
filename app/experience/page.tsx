@@ -6,13 +6,54 @@ import { Briefcase, Users, Github, Linkedin, Mail } from 'lucide-react'
 import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
 
+// Helper function to calculate duration between two dates
+function calculateDuration(startDate: string, endDate?: string): string {
+  const start = new Date(startDate)
+  const end = endDate ? new Date(endDate) : new Date()
+  
+  const totalMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth())
+  
+  if (totalMonths === 0) {
+    return "Less than 1 mo"
+  }
+  
+  const years = Math.floor(totalMonths / 12)
+  const months = totalMonths % 12
+  
+  let result = ""
+  if (years > 0) {
+    result += `${years} yr${years > 1 ? 's' : ''}`
+  }
+  if (months > 0) {
+    if (result) result += " "
+    result += `${months} mo${months > 1 ? 's' : ''}`
+  }
+  
+  return result
+}
+
+// Helper function to format date range display
+function formatDateRange(startDate: string, endDate?: string): string {
+  const start = new Date(startDate)
+  const startFormatted = start.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+  
+  if (endDate) {
+    const end = new Date(endDate)
+    const endFormatted = end.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+    return `${startFormatted} - ${endFormatted}`
+  } else {
+    return `${startFormatted} - Present`
+  }
+}
+
 export default function ExperiencePage() {
 const experiences = [
 {
   title: "Founder",
   company: "Sipaling Data (Identity Building)",
   type: "Full-time",
-  duration: "July 2025 - Present",
+  startDate: "2025-07-01", // July 2025
+  endDate: undefined, // Current position
   location: "Indonesia · Remote",
   description: [
     "Providing data-driven insights to empower Indonesian UMKM in making informed business decisions.",
@@ -24,7 +65,8 @@ const experiences = [
   title: "Commercial and Customer Relation Staff",
   company: "Pelindo Multi Terminal",
   type: "Internship",
-  duration: "Aug 2025 - Present · 1 mo",
+  startDate: "2025-08-01", // Aug 2025
+  endDate: undefined, // Current position
   location: "Kecamatan Medan Belawan, North Sumatra, Indonesia · On-site",
   description: [
     "Assisted in managing commercial operations and customer relations.",
@@ -35,7 +77,8 @@ const experiences = [
   title: "Data Analyst",
   company: "PT GITS Indonesia",
   type: "Apprenticeship",
-  duration: "Aug 2023 - Jan 2024 · 6 mos",
+  startDate: "2023-08-01", // Aug 2023
+  endDate: "2024-01-31", // Jan 2024
   location: "Medan Kota, North Sumatra, Indonesia · Remote",
   description: [
     "Performed data cleaning, transformation, and analysis to extract actionable insights.",
@@ -47,7 +90,8 @@ const experiences = [
   title: "Chairman",
   company: "Youth Christmas Event, HKBP Immanuel",
   type: "Volunteer",
-  duration: "2023",
+  startDate: "2023-01-01", // Assuming full year 2023
+  endDate: "2023-12-31",
   location: "Indonesia",
   description: [
     "Planned budgets and coordinated with church stakeholders for funding and logistics.",
@@ -147,28 +191,35 @@ return (
         <Briefcase className="mr-3 h-7 w-7" /> Professional Experience
       </motion.h2>
       <div className="space-y-8">
-        {experiences.map((exp, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.9 + index * 0.2 }}
-            whileHover={{ y: -5 }}
-          >
-            <Card className="bg-gray-800 border border-blue-900 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300">
-              <CardContent className="p-0">
-                <h3 className="text-xl font-semibold text-white mb-1">{exp.title}</h3>
-                <p className="text-blue-200 text-lg mb-1">{exp.company} · {exp.type}</p>
-                <p className="text-gray-400 text-sm mb-3">{exp.duration} · {exp.location}</p>
-                <ul className="list-disc list-inside text-gray-300 space-y-1">
-                  {exp.description.map((desc, i) => (
-                    <li key={i}>{desc}</li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
+        {experiences.map((exp, index) => {
+          const duration = calculateDuration(exp.startDate, exp.endDate)
+          const dateRange = formatDateRange(exp.startDate, exp.endDate)
+          
+          return (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 + index * 0.2 }}
+              whileHover={{ y: -5 }}
+            >
+              <Card className="bg-gray-800 border border-blue-900 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <CardContent className="p-0">
+                  <h3 className="text-xl font-semibold text-white mb-1">{exp.title}</h3>
+                  <p className="text-blue-200 text-lg mb-1">{exp.company} · {exp.type}</p>
+                  <p className="text-gray-400 text-sm mb-3">
+                    {dateRange} · {duration} · {exp.location}
+                  </p>
+                  <ul className="list-disc list-inside text-gray-300 space-y-1">
+                    {exp.description.map((desc, i) => (
+                      <li key={i}>{desc}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+          )
+        })}
       </div>
     </motion.section>
   </main>
